@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para Michelle 💜</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    #321052 0%,
+                    #160a20 45%,
+                    #08050c 100%
+                );
+
+            color: #eee;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+
+        /* Corazones */
+
+        .heart {
+            position: fixed;
+            bottom: -40px;
+
+            color: rgba(192, 132, 252, 0.18);
+
+            font-size: 25px;
+
+            animation: subir 9s linear infinite;
+
+            z-index: 0;
+
+            pointer-events: none;
+        }
+
+        @keyframes subir {
+
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+
+        }
+
+
+        /* Contenido */
+
+        .contenido {
+            position: relative;
+
+            z-index: 2;
+
+            width: 90%;
+            max-width: 850px;
+
+            margin: auto;
+
+            padding: 40px 0 80px;
+        }
+
+
+        /* Inicio */
+
+        .inicio {
+
+            min-height: 90vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+        }
+
+
+        .corazon {
+
+            font-size: 75px;
+
+            animation: latido 1.6s infinite;
+
+            margin-bottom: 20px;
+
+            filter:
+                drop-shadow(
+                    0 0 20px #a855f7
+                );
+        }
+
+
+        @keyframes latido {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.12);
+            }
+
+        }
+
+
+        .inicio h1 {
+
+            font-size:
+                clamp(50px, 11vw, 90px);
+
+            color: #c084fc;
+
+            text-shadow:
+
+                0 0 15px
+                rgba(168, 85, 247, .7),
+
+                0 0 45px
+                rgba(126, 34, 206, .4);
+
+            margin-bottom: 15px;
+        }
+
+
+        .inicio p {
+
+            color: #d8c4e8;
+
+            font-size: 19px;
+
+            max-width: 600px;
+
+            line-height: 1.7;
+        }
+
+
+        /* Botones */
+
+        .boton {
+
+            margin-top: 30px;
+
+            padding: 14px 30px;
+
+            border: none;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6b21a8,
+                    #a855f7
+                );
+
+            color: white;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 0 20px
+                rgba(168, 85, 247, .3);
+
+            transition: .3s;
+        }
+
+
+        .boton:hover {
+
+            transform:
+                translateY(-3px)
+                scale(1.04);
+
+            box-shadow:
+                0 0 30px
+                rgba(168, 85, 247, .6);
+        }
+
+
+        /* Secciones */
+
+        section {
+
+            margin: 70px 0;
+        }
+
+
+        .tarjeta {
+
+            background:
+                rgba(255, 255, 255, .045);
+
+            border:
+                1px solid
+                rgba(192, 132, 252, .15);
+
+            border-radius: 25px;
+
+            padding: 35px;
+
+            backdrop-filter: blur(12px);
+
+            box-shadow:
+                0 15px 50px
+                rgba(0, 0, 0, .35);
+        }
+
+
+        h2 {
+
+            text-align: center;
+
+            color: #c084fc;
+
+            font-size: 32px;
+
+            margin-bottom: 28px;
+
+            text-shadow:
+                0 0 15px
+                rgba(168, 85, 247, .3);
+        }
+
+
+        /* Carta */
+
+        .carta {
+
+            font-size: 18px;
+
+            line-height: 1.9;
+
+            color: #e8dff0;
+        }
+
+
+        .carta p {
+
+            margin-bottom: 22px;
+        }
+
+
+        .destacado {
+
+            color: #d8b4fe;
+
+            font-size: 20px;
+
+            text-align: center;
+
+            margin: 30px 0;
+        }
+
+
+        .firma {
+
+            text-align: right;
+
+            color: #c084fc;
+
+            font-size: 20px;
+
+            margin-top: 35px;
+        }
+
+
+        /* Cosas que me gustan */
+
+        .cosas {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(200px, 1fr)
+                );
+
+            gap: 18px;
+        }
+
+
+        .cosa {
+
+            padding: 25px;
+
+            text-align: center;
+
+            background:
+                rgba(126, 34, 206, .08);
+
+            border:
+                1px solid
+                rgba(192, 132, 252, .12);
+
+            border-radius: 20px;
+
+            transition: .3s;
+        }
+
+
+        .cosa:hover {
+
+            transform:
+                translateY(-6px);
+
+            background:
+                rgba(126, 34, 206, .16);
+
+            border-color:
+                rgba(192, 132, 252, .25);
+        }
+
+
+        .cosa span {
+
+            font-size: 35px;
+        }
+
+
+        .cosa h3 {
+
+            color: #c084fc;
+
+            margin: 12px 0;
+        }
+
+
+        .cosa p {
+
+            color: #cfc2d8;
+
+            line-height: 1.5;
+        }
+
+
+        /* Mensaje secreto */
+
+        #secreto {
+
+            display: none;
+
+            margin-top: 25px;
+
+            text-align: center;
+
+            line-height: 1.8;
+
+            color: #dbc8e9;
+
+            animation:
+                aparecer .5s ease;
+        }
+
+
+        @keyframes aparecer {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(10px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+
+        }
+
+
+        #secreto strong {
+
+            color: #d8b4fe;
+
+            font-size: 20px;
+        }
+
+
+        /* Final */
+
+        .final {
+
+            text-align: center;
+
+            padding:
+                80px 0 20px;
+        }
+
+
+        .final h2 {
+
+            font-size: 40px;
+        }
+
+
+        .final p {
+
+            color: #d6c7df;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+        }
+
+
+        .pequeno {
+
+            margin-top: 35px;
+
+            color: #75657f;
+
+            font-size: 13px;
+        }
+
+
+        /* Movil */
+
+        @media(max-width: 600px) {
+
+            .tarjeta {
+
+                padding:
+                    25px 20px;
+            }
+
+
+            .carta {
+
+                font-size: 17px;
+            }
+
+
+            h2 {
+
+                font-size: 27px;
+            }
+
+
+            .final h2 {
+
+                font-size: 32px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- Corazones -->
+
+    <div
+        class="heart"
+        style="left:8%; animation-delay:0s;">
+        ♥
+    </div>
+
+    <div
+        class="heart"
+        style="left:22%; animation-delay:2s;">
+        ♥
+    </div>
+
+    <div
+        class="heart"
+        style="left:43%; animation-delay:4s;">
+        ♥
+    </div>
+
+    <div
+        class="heart"
+        style="left:65%; animation-delay:1s;">
+        ♥
+    </div>
+
+    <div
+        class="heart"
+        style="left:87%; animation-delay:3s;">
+        ♥
+    </div>
+
+
+    <main class="contenido">
+
+
+        <!-- Inicio -->
+
+        <div class="inicio">
+
+            <div class="corazon">
+                💜
+            </div>
+
+            <h1>
+                Michelle
+            </h1>
+
+            <p>
+                Hice esto para ti, porque queria darte algo
+                que pudieras guardar y recordar
+            </p>
+
+            <button
+                class="boton"
+                onclick="irCarta()">
+
+                Para ti 💜
+
+            </button>
+
+        </div>
+
+
+        <!-- Carta -->
+
+        <section id="carta">
+
+            <div class="tarjeta">
+
+                <h2>
+                    Para ti, Michelle 💜
+                </h2>
+
+
+                <div class="carta">
+
+
+                    <p>
+                        Michelle, queria hacer algo diferente para ti,
+                        algo que no fuera solamente un mensaje mas,
+                        queria dejarte algo que realmente fuera para ti
+                    </p>
+
+
+                    <p>
+                        Hemos pasado por muchas cosas, hemos tenido
+                        momentos muy bonitos, pero tambien momentos
+                        bastante complicados, y aun con todo eso,
+                        sigues siendo una persona demasiado importante para mi
+                    </p>
+
+
+                    <p>
+                        No quiero hablarte solamente de promesas,
+                        ni decirte que todo sera perfecto a partir de ahora,
+                        porque se que las cosas no funcionan asi
+                    </p>
+
+
+                    <p>
+                        Lo que quiero es que poco a poco puedas notar
+                        que realmente estoy intentando hacer las cosas bien,
+                        no solamente decirte que quiero cambiar,
+                        sino demostrartelo con mis acciones
+                    </p>
+
+
+                    <p class="destacado">
+                        Quiero que esta vez puedas verlo por ti misma
+                    </p>
+
+
+                    <p>
+                        Quiero seguir compartiendo momentos contigo,
+                        seguir conociendote, seguir aprendiendo de ti
+                        y poder construir algo bonito juntos,
+                        sin apresurarnos y sin querer que todo sea perfecto
+                    </p>
+
+
+                    <p>
+                        Porque a pesar de todo lo que ha pasado,
+                        yo sigo teniendo muchisimo cariño por ti,
+                        y sigo queriendo que seas parte de mi vida
+                    </p>
+
+
+                    <p>
+                        Tal vez no siempre sepa como decirte todo lo que siento,
+                        pero espero que con el tiempo pueda demostrartelo
+                        de una forma que realmente puedas sentir
+                    </p>
+
+
+                    <p class="destacado">
+                        Te quiero muchotototototote, mi vida 💞
+                    </p>
+
+
+                    <div class="firma">
+
+                        Para ti, siempre 💜
+
+                        <br>
+
+                        Ricardo
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Cosas -->
+
+        <section>
+
+            <div class="tarjeta">
+
+                <h2>
+                    Algunas cosas que me gustan de ti
+                </h2>
+
+
+                <div class="cosas">
+
+
+                    <div class="cosa">
+
+                        <span>💜</span>
+
+                        <h3>
+                            Tu forma de ser
+                        </h3>
+
+                        <p>
+                            Me gusta la forma en la que eres,
+                            incluso esas pequeñas cosas que solamente
+                            tu haces
+                        </p>
+
+                    </div>
+
+
+                    <div class="cosa">
+
+                        <span>✨</span>
+
+                        <h3>
+                            Tu manera de querer
+                        </h3>
+
+                        <p>
+                            Me gusta sentir tu cariño,
+                            y saber que existe un lugar donde
+                            podemos ser nosotros mismos
+                        </p>
+
+                    </div>
+
+
+                    <div class="cosa">
+
+                        <span>🌙</span>
+
+                        <h3>
+                            Nuestros momentos
+                        </h3>
+
+                        <p>
+                            No importa si es algo grande o algo pequeño,
+                            muchos de nuestros momentos terminan
+                            significando mucho para mi
+                        </p>
+
+                    </div>
+
+
+                    <div class="cosa">
+
+                        <span>🫶</span>
+
+                        <h3>
+                            Simplemente tu
+                        </h3>
+
+                        <p>
+                            Porque al final no necesito una razon complicada,
+                            me gustas por ser tu
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Algo que quiero que recuerdes -->
+
+        <section>
+
+            <div class="tarjeta">
+
+                <h2>
+                    Algo que quiero que recuerdes 💜
+                </h2>
+
+
+                <div class="carta">
+
+
+                    <p>
+                        No se cuanto tiempo nos quede por delante,
+                        pero si hay algo que tengo claro es que quiero
+                        aprovechar cada momento que pueda compartir contigo
+                    </p>
+
+
+                    <p>
+                        No quiero que lo bonito entre nosotros se quede
+                        solamente en palabras o en recuerdos,
+                        quiero seguir creando momentos que algun dia
+                        podamos mirar hacia atras y recordar con una sonrisa
+                    </p>
+
+
+                    <p class="destacado">
+                        Quiero que lo que venga despues tambien sea parte
+                        de nuestra historia
+                    </p>
+
+
+                    <p>
+                        Porque al final, no se trata de contar cuanto tiempo
+                        llevamos, sino de todo lo que podemos llegar a vivir
+                        durante ese tiempo
+                    </p>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Mensaje secreto -->
+
+        <section>
+
+            <div
+                class="tarjeta"
+                style="text-align:center;">
+
+
+                <h2>
+                    Una ultima cosa...
+                </h2>
+
+
+                <button
+                    class="boton"
+                    onclick="mostrarSecreto()">
+
+                    Abrir 💌
+
+                </button>
+
+
+                <div id="secreto">
+
+                    Si llegaste hasta aqui,
+                    queria dejarte una ultima cosa
+
+                    <br><br>
+
+                    No importa cuanto tiempo pase,
+                    ni cuantas cosas tengamos que superar,
+                    siempre voy a guardar con mucho cariño
+                    todo lo que hemos vivido
+
+                    <br><br>
+
+                    <strong>
+                        Te quiero, Michelle,
+                        y espero que podamos seguir
+                        escribiendo nuestra historia juntos 💜
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- Final -->
+
+        <div class="final">
+
+
+            <h2>
+                Te quiero, mi niña linda 💜
+            </h2>
+
+
+            <p>
+
+                Gracias por estar aqui,
+                y por permitirme seguir compartiendo
+                momentos contigo
+
+                <br><br>
+
+                Esta pagina es solamente una pequeña forma
+                de recordarte lo importante que eres para mi
+
+            </p>
+
+
+            <div class="pequeno">
+
+                Hecho especialmente para Michelle 💜
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+    <script>
+
+
+        function irCarta() {
+
+            document
+                .getElementById("carta")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        }
+
+
+        function mostrarSecreto() {
+
+            const secreto =
+                document.getElementById("secreto");
+
+
+            if (
+                secreto.style.display === "block"
+            ) {
+
+                secreto.style.display = "none";
+
+            } else {
+
+                secreto.style.display = "block";
+
+            }
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
